@@ -1,4 +1,4 @@
-package com.devsuperior.dscatalog.config.customgrant;
+package com.devsuperior.demo.config.customgrant;
 
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.lang.Nullable;
@@ -64,7 +64,7 @@ public class CustomPasswordAuthenticationConverter implements AuthenticationConv
 		});
 		
 		Authentication clientPrincipal = SecurityContextHolder.getContext().getAuthentication();	
-		return new com.devsuperior.dscatalog.config.customgrant.CustomPasswordAuthenticationToken(clientPrincipal, requestedScopes, additionalParameters);
+		return new com.devsuperior.demo.config.customgrant.CustomPasswordAuthenticationToken(clientPrincipal, requestedScopes, additionalParameters);
 	}
 
 	private static MultiValueMap<String, String> getParameters(HttpServletRequest request) {

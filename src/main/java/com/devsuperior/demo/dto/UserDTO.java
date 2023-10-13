@@ -1,2 +1,4 @@
-package com.devsuperior.demo.dto;public class UserDTO {
+package com.devsuperior.demo.dto;
+
+public class UserDTO {
 }

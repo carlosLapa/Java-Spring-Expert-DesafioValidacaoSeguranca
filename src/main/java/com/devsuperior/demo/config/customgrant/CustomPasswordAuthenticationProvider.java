@@ -1,4 +1,4 @@
-package com.devsuperior.dscatalog.config.customgrant;
+package com.devsuperior.demo.config.customgrant;
 
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.core.Authentication;
@@ -54,7 +54,7 @@ public class CustomPasswordAuthenticationProvider implements AuthenticationProvi
 	@Override
 	public Authentication authenticate(Authentication authentication) throws AuthenticationException {
 		
-		com.devsuperior.dscatalog.config.customgrant.CustomPasswordAuthenticationToken customPasswordAuthenticationToken = (com.devsuperior.dscatalog.config.customgrant.CustomPasswordAuthenticationToken) authentication;
+		com.devsuperior.demo.config.customgrant.CustomPasswordAuthenticationToken customPasswordAuthenticationToken = (com.devsuperior.demo.config.customgrant.CustomPasswordAuthenticationToken) authentication;
 		OAuth2ClientAuthenticationToken clientPrincipal = getAuthenticatedClientElseThrowInvalidClient(customPasswordAuthenticationToken);
 		RegisteredClient registeredClient = clientPrincipal.getRegisteredClient();
 		username = customPasswordAuthenticationToken.getUsername();
@@ -78,7 +78,7 @@ public class CustomPasswordAuthenticationProvider implements AuthenticationProvi
 		
 		//-----------Create a new Security Context Holder Context----------
 		OAuth2ClientAuthenticationToken oAuth2ClientAuthenticationToken = (OAuth2ClientAuthenticationToken) SecurityContextHolder.getContext().getAuthentication();
-		com.devsuperior.dscatalog.config.customgrant.CustomUserAuthorities customPasswordUser = new com.devsuperior.dscatalog.config.customgrant.CustomUserAuthorities(username, user.getAuthorities());
+		com.devsuperior.demo.config.customgrant.CustomUserAuthorities customPasswordUser = new com.devsuperior.demo.config.customgrant.CustomUserAuthorities(username, user.getAuthorities());
 		oAuth2ClientAuthenticationToken.setDetails(customPasswordUser);
 		
 		var newcontext = SecurityContextHolder.createEmptyContext();
@@ -127,7 +127,7 @@ public class CustomPasswordAuthenticationProvider implements AuthenticationProvi
 
 	@Override
 	public boolean supports(Class<?> authentication) {
-		return com.devsuperior.dscatalog.config.customgrant.CustomPasswordAuthenticationToken.class.isAssignableFrom(authentication);
+		return com.devsuperior.demo.config.customgrant.CustomPasswordAuthenticationToken.class.isAssignableFrom(authentication);
 	}
 
 	private static OAuth2ClientAuthenticationToken getAuthenticatedClientElseThrowInvalidClient(Authentication authentication) {

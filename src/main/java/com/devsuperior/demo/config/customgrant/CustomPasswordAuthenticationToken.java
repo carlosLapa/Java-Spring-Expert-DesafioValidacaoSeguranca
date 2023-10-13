@@ -1,4 +1,4 @@
-package com.devsuperior.dscatalog.config.customgrant;
+package com.devsuperior.demo.config.customgrant;
 
 import org.springframework.lang.Nullable;
 import org.springframework.security.core.Authentication;
