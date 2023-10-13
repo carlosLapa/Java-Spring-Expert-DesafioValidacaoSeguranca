@@ -1,12 +1,11 @@
-package com.devsuperior.demo.controllers;
+package com.devsuperior.demo.resources;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/cities")
-public class CityController {
-
+@RequestMapping(value = "/events")
+public class EventResource {
 
 
 }

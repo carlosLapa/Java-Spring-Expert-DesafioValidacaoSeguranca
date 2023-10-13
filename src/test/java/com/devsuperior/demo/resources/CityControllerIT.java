@@ -1,4 +1,4 @@
-package com.devsuperior.demo.controllers;
+package com.devsuperior.demo.resources;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
